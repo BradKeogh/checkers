@@ -1,8 +1,10 @@
-# Development of checkers game.
-print('Making checkers')
+# %load_ext autoreload
+#
+# %autoreload 2
+
+print('Starting checkers')
 
 from checkers import game
 g = game()
-g.greeting()
 
-print(g.board)
+g.status()
