@@ -60,3 +60,7 @@ class piece:
     def __init__(self, pos, color):
         self.pos = pos
         self.color = color
+
+class new_with_problems:
+    def __init__(self):
+        pass
