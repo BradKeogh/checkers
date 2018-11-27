@@ -50,7 +50,7 @@ class game:
         #(if off board remove option of move)
         #check all white piece positons, if one is in position of movement change the movement to new possible postition (check not off board)
         # check position request to move in list, if yes move, if no return message not possible.
-
+        #
 
         # make movement on board and update position in pieces.
         # if there was a jump remove other piece.
