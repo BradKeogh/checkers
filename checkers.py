@@ -2,28 +2,46 @@ import numpy as np
 
 class game:
     def __init__(self):
-        self.item = 'hello'
-        self.newboard()
-        self.turn = 2 # set white to have turn at start
+        #### set dep
+        self.turn = 'W' # set white to have turn at
+        self.Wpiece = [] # list of white pieces
+        self.Bpiece = []
+
+        #### setup board
+        self.board = self.newboard()
+        self.greeting()
 
     def greeting(self):
-        print(self.item)
+        print('starting game.........')
+        return
+
+    def status(self):
+        print('GAME STATUS')
+        print('White: ',str(len(self.Wpiece)))
+        print('Black: ',str(len(self.Bpiece)))
+        print(self.board)
+        return
 
     def newboard(self):
         "create new board with pieces"
-        self.board = np.zeros([10,10]) # clean board
+        board = np.zeros([100]) # clean board
+
+
+        # white  pieces
+        for i in np.arange(0,10,2):
+            p = piece(i,'W') # create piece
+            self.Wpiece.append(p) # add to list of pieces
+            board[i:i+1] = 1 #add_to_board
 
         # black pieces
-        self.board[0:1:,::2] = 1
-        self.board[1:2:,1::2] = 1
-        self.board[2:3:,::2] = 1
-        self.board[3:4:,1::2] = 1
+        for i in np.arange(91,100,2):
+            p = piece(i,'B') # create piece
+            self.Bpiece.append(p) # add to list of pieces
+            board[i:i+1] = 2 # add_to_board
 
-        # white pieces
-        self.board[-1::,1::2] = 2
-        self.board[-2:-1:,::2] = 2
-        self.board[-3:-2:,1::2] = 2
-        self.board[-4:-3:,::2] = 2
+        # reshape board
+        board = board.reshape(10,10)
+        return(board)
 
     def make_move(self,start,end):
         "take input and move piece to location"
@@ -42,7 +60,3 @@ class piece:
     def __init__(self, pos, color):
         self.pos = pos
         self.color = color
-
-class new_with_problems:
-    def __init__(self):
-        pass
