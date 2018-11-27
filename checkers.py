@@ -27,8 +27,16 @@ class game:
 
     def make_move(self,start,end):
         "take input and move piece to location"
-        # check if position is valid
-        # check if new position is valid
+        #### check if new position is valid
+        #calc_2_positons
+        #(if off board remove option of move)
+        #check all white piece positons, if one is in position of movement change the movement to new possible postition (check not off board)
+        # check position request to move in list, if yes move, if no return message not possible.
+        #
+
+        # make movement on board and update position in pieces.
+        # if there was a jump remove other piece.
+        return
 
 class piece:
     def __init__(self, pos, color):
